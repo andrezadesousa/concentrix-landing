@@ -14,9 +14,11 @@
   --background-color: rgba(255, 255, 255, 1);
   --title-color: rgba(95, 109, 114, 1);
   --blue-800: rgba(18, 100, 120, 1);
+  --gray-100: rgba(227, 230, 234, 1);
   --gray-200: rgba(219, 224, 233, 1);
   --gray-300: rgba(174, 192, 203, 1);
   --gray-500: rgba(98, 130, 149, 1);
+  --gray-600: rgba(77, 105, 124, 1);
 
   --z-tooltip: 10;
   --z-fixed: 100;
@@ -216,17 +218,63 @@ button {
   font-style: bold;
 }
 
-/* Scroll image animate */
-@keyframes scroll {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-0.5rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
+.home {
+  background-color: var(--gray-100);
+  padding: 60px 15px 30px 30px;
+  gap: 30px;
+  display: grid;
+  justify-items: center;
+}
+
+.home_container {
+  display: grid;
+  gap: 20px;
+}
+
+.home__titles {
+  width: 385px;
+  height: 68px;
+}
+
+.home__titles h1 {
+  font-weight: 400;
+  font-size: 28px;
+}
+
+.home__titles span {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.home__boxes {
+  display: flex;
+  gap: 20px;
+}
+
+.home__box {
+  background-color: var(--background-color);
+  display: grid;
+  width: 340px;
+  height: 300px;
+  border-radius: 16px;
+  padding: 30px;
+  gap: 20px;
+}
+
+.home__box-title {
+  font-weight: 700;
+  font-size: bold;
+  font-size: 18px;
+}
+
+.home__box-text {
+  font-weight: 700;
+  font-size: bold;
+  font-size: 22px;
+}
+
+.home__box-gray {
+  display: none;
 }
 
 /* Scroll bar */
@@ -253,6 +301,10 @@ button {
 @media screen and (min-width: 767px) {
   .section {
     padding: 7rem 0 2rem;
+  }
+
+  .home__boxes {
+    justify-content: center;
   }
 }
 
@@ -286,5 +338,46 @@ button {
     width: 920px;
     height: 378px;
     flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1230px) {
+  .home__content {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, auto);
+    align-items: start;
+  }
+
+  .home__boxes {
+    flex-direction: column;
+  }
+
+  .home__box-gray {
+    background-color: var(--gray-600);
+    width: 450px;
+    height: 670px;
+    border-radius: 16px;
+    padding: 40px 50px;
+    gap: 18px;
+    display: grid;
+  }
+
+  .home__box-gray-titles {
+    display: grid;
+    gap: 10px;
+    color: var(--background-color);
+  }
+
+  .home__box-gray-titles h1 {
+    font-weight: 700;
+    font-style: bold;
+    font-size: 16px;
+  }
+
+  .home__box-gray-titles span {
+    font-weight: 700;
+    font-style: bold;
+    font-size: 40px;
   }
 }
