@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import "./App.css";
 import Home from "./components/Home";
 import PersonalizedService from "./components/PersonalizedService";
+import StartNow from "./components/StartNow";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Hero />
         <Home />
         <PersonalizedService />
+        <StartNow />
       </main>
     </>
   );

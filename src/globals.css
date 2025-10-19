@@ -14,10 +14,14 @@
   --background-color: rgba(255, 255, 255, 1);
   --title-color: rgba(95, 109, 114, 1);
   --blue-800: rgba(18, 100, 120, 1);
+  --gray-50: rgba(244, 246, 247, 1);
   --gray-100: rgba(227, 230, 234, 1);
   --gray-200: rgba(219, 224, 233, 1);
   --gray-300: rgba(174, 192, 203, 1);
   --gray-500: rgba(98, 130, 149, 1);
+  --gray-600: rgba(77, 105, 124, 1);
+  --gray-700: rgba(69, 77, 89, 1);
+  --gray-900: rgba(55, 59, 66, 1);
 
   --z-tooltip: 10;
   --z-fixed: 100;
