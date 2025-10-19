@@ -19,6 +19,8 @@
   --gray-300: rgba(174, 192, 203, 1);
   --gray-500: rgba(98, 130, 149, 1);
   --gray-600: rgba(77, 105, 124, 1);
+  --gray-700: rgba(69, 77, 89, 1);
+  --gray-900: rgba(55, 59, 66, 1);
 
   --z-tooltip: 10;
   --z-fixed: 100;
@@ -277,6 +279,43 @@ button {
   display: none;
 }
 
+.personalized {
+  padding: 60px 15px 30px 15px;
+  display: grid;
+}
+
+.personalized__container {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+}
+
+.personalized__titles {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+.personalized__titles span {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gray-900);
+  text-align: center;
+  width: 300px;
+  padding-left: 60px;
+}
+
+.personalized__titles h1 {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--gray-700);
+  font-style: regular;
+}
+
+.personalized__boxes {
+  display: none;
+}
+
 /* Scroll bar */
 ::-webkit-scrollbar {
   width: 0.6rem;
@@ -379,5 +418,19 @@ button {
     font-weight: 700;
     font-style: bold;
     font-size: 40px;
+  }
+
+  .personalized__boxes {
+    display: flex;
+    gap: 20px;
+  }
+
+  .personalized__titles span {
+    font-size: 40px;
+    width: 100%;
+  }
+
+  .personalized__titles h1 {
+    font-size: 22px;
   }
 }

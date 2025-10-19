@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import "./App.css";
 import Home from "./components/Home";
+import PersonalizedService from "./components/PersonalizedService";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <main>
         <Hero />
         <Home />
+        <PersonalizedService />
       </main>
     </>
   );
