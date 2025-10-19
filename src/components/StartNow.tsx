@@ -3,13 +3,13 @@ import { cardStartData } from "../mock/CardStartData";
 
 const StartNow = () => {
   return (
-    <section className="section personalized">
-      <div className="personalized__container ">
-        <div className="personalized__titles">
+    <section className="section start__now" id="start__now">
+      <div className="start__now__container">
+        <div className="start__now__titles">
           <span>Comece agora!</span>
           <h2>Veja como é fácil e seguro.</h2>
         </div>
-        <div className="personalized__cards">
+        <div className="start__now__cards">
           {cardStartData.map((card, id) => {
             return (
               <CardStat

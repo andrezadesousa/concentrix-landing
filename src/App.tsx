@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./components/Home";
 import PersonalizedService from "./components/PersonalizedService";
 import StartNow from "./components/StartNow";
+import Faq from "./components/Faq";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Home />
         <PersonalizedService />
         <StartNow />
+        <Faq />
       </main>
     </>
   );

@@ -10,9 +10,10 @@
   --font-bold: 700;
 
   --second-color: rgba(0, 124, 180, 1);
-  --button-color: rgba(3, 157, 183, 1);
-  --background-color: rgba(255, 255, 255, 1);
   --title-color: rgba(95, 109, 114, 1);
+
+  --white-color: rgba(255, 255, 255, 1);
+  --blue-600: rgba(3, 157, 183, 1);
   --blue-800: rgba(18, 100, 120, 1);
   --gray-50: rgba(244, 246, 247, 1);
   --gray-100: rgba(227, 230, 234, 1);
@@ -121,7 +122,7 @@ button {
 
 .hero__titles {
   display: flex;
-  color: var(--background-color);
+  color: var(--white-color);
   flex-direction: column;
   align-items: flex-start;
   width: 207px;
@@ -141,7 +142,7 @@ button {
 .hero__form {
   width: 400px;
   height: 368px;
-  background-color: var(--background-color);
+  background-color: var(--white-color);
   border-radius: 10px;
   padding: 15px;
   gap: 20px;
@@ -170,7 +171,7 @@ button {
   font-weight: 700;
   font-size: 16px;
   color: var(--gray-500);
-  background-color: var(--background-color);
+  background-color: var(--white-color);
 }
 
 .hero__form-button-default {
@@ -180,8 +181,8 @@ button {
   pad: 12px 10px;
   font-weight: 700;
   font-size: 16px;
-  color: var(--background-color);
-  background-color: var(--button-color);
+  color: var(--white-color);
+  background-color: var(--blue-600);
 }
 
 .hero__form-inputs {
@@ -195,7 +196,7 @@ button {
   border: 1px solid var(--gray-200);
   padding: 15px;
   margin-top: 5px;
-  background-color: var(--background-color);
+  background-color: var(--white-color);
 }
 
 .hero__form-input::placeholder {
@@ -206,7 +207,7 @@ button {
 }
 
 .hero__button-enter {
-  background-color: var(--button-color);
+  background-color: var(--blue-600);
   width: 370px;
   height: 52px;
   border-radius: 6px;
@@ -215,7 +216,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--background-color);
+  color: var(--white-color);
   font-weight: 700;
   font-size: 18px;
   font-style: bold;
@@ -255,7 +256,7 @@ button {
 }
 
 .home__box {
-  background-color: var(--background-color);
+  background-color: var(--white-color);
   display: grid;
   width: 340px;
   height: 300px;
@@ -317,23 +318,37 @@ button {
   display: none;
 }
 
-.personalized {
+.start__now {
   background-color: var(--gray-100);
 }
 
-.personalized__titles {
+.start__now__container {
+  display: grid;
+  justify-content: center;
+  gap: 40px;
+}
+
+.start__now__titles {
   display: grid;
   gap: 10px;
   justify-content: center;
   text-align: center;
+  color: var(--gray-700);
 }
 
-.personalized__titles span {
+.start__now__titles span {
   font-weight: 700;
+  font-size: 22px;
 }
 
-.personalized__cards {
+.start__now__titles h2 {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.start__now__cards {
   display: flex;
+  gap: 20px;
   font-size: 40px;
   color: var(--gray-900);
 }
@@ -346,7 +361,7 @@ button {
   border-radius: 20px;
   padding: 40px;
   gap: 32px;
-  background-color: var(--background-color);
+  background-color: var(--white-color);
 }
 
 .card__container {
@@ -382,6 +397,52 @@ button {
   width: 160px;
   height: 160px;
   padding: 10px;
+}
+
+.faq {
+  background-color: var(--blue-600);
+  padding: 90px 180px;
+}
+
+.faq__titles {
+  color: var(--white-color);
+}
+
+.faq__titles span {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.faq__titles h2 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.faq__card {
+  margin-top: 20px;
+}
+
+.faq__card-container {
+  display: grid;
+  gap: 20px;
+}
+
+.faq__card-title {
+  color: var(--white-color);
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 18px 10px;
+  border-bottom: 1px solid var(--white-color);
+}
+
+.faq__card-text {
+  font-size: 16px;
+  color: var(--white-color);
+  font-weight: 400;
+  padding: 18px 10px;
 }
 
 /* Scroll bar */
@@ -473,7 +534,7 @@ button {
   .home__box-gray-titles {
     display: grid;
     gap: 10px;
-    color: var(--background-color);
+    color: var(--white-color);
   }
 
   .home__box-gray-titles h1 {
@@ -499,6 +560,14 @@ button {
   }
 
   .personalized__titles h1 {
+    font-size: 22px;
+  }
+
+  .start__now__titles span {
+    font-size: 40px;
+  }
+
+  .start__now__titles h2 {
     font-size: 22px;
   }
 }
