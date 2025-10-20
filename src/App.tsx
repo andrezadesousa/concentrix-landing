@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import "./App.css";
@@ -15,10 +14,10 @@ function App() {
       <main>
         <Hero />
         <Home />
-        {/* <PersonalizedService />
+        <PersonalizedService />
         <StartNow />
         <Faq />
-        <Footer /> */}
+        <Footer />
       </main>
     </>
   );
