@@ -4,21 +4,22 @@ const Hero = () => {
   const [perfil, setPerfil] = useState("PF"); // "PF" ou "PJ"
   const [documento, setDocumento] = useState("");
   const [nascimento, setNascimento] = useState("");
+  const [error, setError] = useState(""); // aviso para o usuário
 
   const handlePF = () => {
     setPerfil("PF");
     setDocumento("");
+    setError("");
   };
 
   const handlePJ = () => {
     setPerfil("PJ");
     setDocumento("");
+    setError("");
   };
 
   const formatCPF = (value: string) => {
-    // Remove tudo que não é número
     value = value.replace(/\D/g, "");
-    // Formata CPF
     value = value.replace(/(\d{3})(\d)/, "$1.$2");
     value = value.replace(/(\d{3})(\d)/, "$1.$2");
     value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
@@ -57,12 +58,37 @@ const Hero = () => {
 
   const handleLogin = (e: any) => {
     e.preventDefault();
+
+    // validação completa
+    const documentoValido =
+      (perfil === "PF" && documento.length === 14) ||
+      (perfil === "PJ" && documento.length === 18);
+    const nascimentoValido = nascimento.length === 10;
+
+    if (!documentoValido || !nascimentoValido) {
+      setError(
+        "Por favor, preencha corretamente todos os campos antes de entrar."
+      );
+      return;
+    }
+
     alert(
       `Bem-vindo(a)! Perfil: ${
         perfil === "PF" ? "Pessoa Física" : "Pessoa Jurídica"
       }`
     );
+
+    // resetar campos e limpar erro
+    setDocumento("");
+    setNascimento("");
+    setError("");
   };
+
+  // desabilita botão se os campos não estiverem completos
+  const isDisabled =
+    (perfil === "PF" && documento.length < 14) ||
+    (perfil === "PJ" && documento.length < 18) ||
+    nascimento.length < 10;
 
   return (
     <section className="hero grid" id="hero">
@@ -100,6 +126,7 @@ const Hero = () => {
               Pessoa Jurídica
             </button>
           </div>
+
           <div className="hero__form-inputs">
             <h1 className="hero__form-title">
               {perfil === "PF" ? "CPF" : "CNPJ"}
@@ -111,9 +138,10 @@ const Hero = () => {
               }
               value={documento}
               onChange={handleDocumentoChange}
-              maxLength={perfil === "PF" ? 14 : 18} // controla o tamanho
+              maxLength={perfil === "PF" ? 14 : 18}
             />
           </div>
+
           <div className="hero__form-inputs">
             <h1 className="hero__form-title">Data de nascimento</h1>
             <input
@@ -125,11 +153,14 @@ const Hero = () => {
             />
           </div>
 
+          {error && <p className="hero__form-error">{error}</p>}
+
           <button
             type="submit"
             className={`hero__button-enter ${
               perfil === "PJ" ? "hero__form-button-default" : ""
             }`}
+            disabled={isDisabled}
           >
             Entrar
           </button>
