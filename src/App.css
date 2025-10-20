@@ -564,6 +564,11 @@ button {
   padding: 18px 10px;
 }
 
+.faq__card-text {
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
 .footer {
   background-color: var(--blue-50);
   padding: 44px 30px;
@@ -625,6 +630,29 @@ button {
   font-size: 16px;
   font-weight: 400;
 }
+
+.faq__card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.faq__card-title:hover {
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Scroll bar */
 ::-webkit-scrollbar {
   width: 0.6rem;
@@ -779,5 +807,60 @@ button {
   .footer__rights {
     display: flex;
     justify-content: space-between;
+  }
+}
+
+@media (max-width: 1230px) {
+  .home__boxes {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .home__boxes::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home__first-box {
+    display: flex;
+    flex-shrink: 0;
+    gap: 1rem;
+  }
+
+  .home__box {
+    flex-shrink: 0;
+    min-width: 280px;
+  }
+
+  .home__box-gray {
+    flex-shrink: 0;
+    min-width: 280px;
+  }
+
+  .start__now__cards {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .start__now__cards::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .start__now__cards > * {
+    flex-shrink: 0;
+    min-width: 280px;
   }
 }
