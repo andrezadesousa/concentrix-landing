@@ -15,10 +15,10 @@ function App() {
       <main>
         <Hero />
         <Home />
-        <PersonalizedService />
+        {/* <PersonalizedService />
         <StartNow />
         <Faq />
-        <Footer />
+        <Footer /> */}
       </main>
     </>
   );
