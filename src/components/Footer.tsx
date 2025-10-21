@@ -15,8 +15,12 @@ const Footer = () => {
         <div className="footer__content">
           <div className="footer__about">
             <span className="footer__span">Sobre</span>
-            <a>Quem somos</a>
-            <a>Política de privacidade</a>
+            <a href="https://www.concentrix.com/pt-br/brasil/" target="_blank">
+              Quem somos
+            </a>
+            <a href="https://andreza-sousa.web.app/" target="_blank">
+              Política de privacidade
+            </a>
           </div>
           <div className="footer__us">
             <span className="footer__span">Fale com a gente</span>

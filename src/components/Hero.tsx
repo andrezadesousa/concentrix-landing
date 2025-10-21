@@ -1,26 +1,15 @@
 import { useState } from "react";
+import Alert from "./Alert";
 
-interface HeroProps {
-  onLogin?: () => void;
-}
-
-const Hero = ({ onLogin }: HeroProps) => {
+const Hero = () => {
   const [perfil, setPerfil] = useState("PF");
   const [documento, setDocumento] = useState("");
   const [nascimento, setNascimento] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
-  const handlePF = () => {
-    setPerfil("PF");
-    setDocumento("");
-    setError("");
-  };
-
-  const handlePJ = () => {
-    setPerfil("PJ");
-    setDocumento("");
-    setError("");
-  };
+  const handlePF = () => setPerfil("PF");
+  const handlePJ = () => setPerfil("PJ");
 
   const formatCPF = (value: string) => {
     value = value.replace(/\D/g, "");
@@ -48,11 +37,8 @@ const Hero = ({ onLogin }: HeroProps) => {
 
   const handleDocumentoChange = (e: any) => {
     let value = e.target.value;
-    if (perfil === "PF") {
-      value = formatCPF(value);
-    } else {
-      value = formatCNPJ(value);
-    }
+    if (perfil === "PF") value = formatCPF(value);
+    else value = formatCNPJ(value);
     setDocumento(value);
   };
 
@@ -75,20 +61,14 @@ const Hero = ({ onLogin }: HeroProps) => {
       return;
     }
 
-    alert(
-      `Bem-vindo(a)! Perfil: ${
-        perfil === "PF" ? "Pessoa Física" : "Pessoa Jurídica"
-      }`
-    );
-
-    setDocumento("");
-    setNascimento("");
     setError("");
+    setSuccess(true);
 
-    if (onLogin) onLogin();
+    setTimeout(() => {
+      window.location.href = "https://andreza-sousa.web.app/";
+    }, 2000); // redireciona depois de 2s
   };
 
-  // desabilita botão se os campos não estiverem completos
   const isDisabled =
     (perfil === "PF" && documento.length < 14) ||
     (perfil === "PJ" && documento.length < 18) ||
@@ -96,6 +76,13 @@ const Hero = ({ onLogin }: HeroProps) => {
 
   return (
     <section className="hero grid" id="hero">
+      {success && (
+        <Alert
+          message="Login realizado com sucesso! Redirecionando..."
+          type="success"
+          onClose={() => setSuccess(false)}
+        />
+      )}
       <div className="hero__container">
         <div className="hero__titles">
           <h1 className="hero__title">Tenha aqui </h1>
@@ -107,7 +94,6 @@ const Hero = ({ onLogin }: HeroProps) => {
           <div className="hero__form-buttons">
             <button
               type="button"
-              id="btnPF"
               className={
                 perfil === "PF"
                   ? "hero__form-button-default"
@@ -119,7 +105,6 @@ const Hero = ({ onLogin }: HeroProps) => {
             </button>
             <button
               type="button"
-              id="btnPJ"
               className={
                 perfil === "PJ"
                   ? "hero__form-button-default"
@@ -161,9 +146,7 @@ const Hero = ({ onLogin }: HeroProps) => {
 
           <button
             type="submit"
-            className={`hero__button-enter ${
-              perfil === "PJ" ? "hero__form-button-default" : ""
-            }`}
+            className="hero__button-enter"
             disabled={isDisabled}
           >
             Entrar

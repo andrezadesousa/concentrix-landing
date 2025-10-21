@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className="header" id="header">
       <a
-        href="https://www.concentrix.com/pt-br/brasil/"
+        href="https://andreza-sousa.web.app/"
         target="_blank"
         rel="noreferrer"
         className="nav__logo"
