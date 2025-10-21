@@ -55,8 +55,34 @@ const Home = () => {
               userSelect: "none",
             }}
           >
-            <div className="home__box">
-              <h1 className="home__box-title">Negociação</h1>
+            <div className="home__destktop">
+              <div className="home__box">
+                <h1 className="home__box-title">Negociação</h1>
+                <img
+                  className="home__box-img"
+                  src={Negotiation}
+                  draggable={false}
+                  onDragStart={(e) => e.preventDefault()}
+                />
+                <p className="home__box-text">
+                  Negociação <br /> rápida e segura.
+                </p>
+              </div>
+              <div className="home__box">
+                <h1 className="home__box-title">Segunda via</h1>
+                <img
+                  className="home__box-img"
+                  src={SecondCopy}
+                  draggable={false}
+                  onDragStart={(e) => e.preventDefault()}
+                />
+                <p className="home__box-text">
+                  Consulta de <br /> débitos em atraso.
+                </p>
+              </div>
+            </div>
+            <div className="home__box mobile">
+              <h1 className="home__box-title ">Negociação</h1>
               <img
                 className="home__box-img"
                 src={Negotiation}
@@ -67,7 +93,7 @@ const Home = () => {
                 Negociação <br /> rápida e segura.
               </p>
             </div>
-            <div className="home__box">
+            <div className="home__box mobile">
               <h1 className="home__box-title">Segunda via</h1>
               <img
                 className="home__box-img"

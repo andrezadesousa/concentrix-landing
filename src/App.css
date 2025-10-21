@@ -309,6 +309,10 @@ button {
   font-size: 20px;
 }
 
+.home__destktop {
+  display: none;
+}
+
 .personalized {
   padding: 60px 15px 30px 15px;
   display: grid;
@@ -665,6 +669,14 @@ button {
     font-weight: 700;
     font-style: bold;
     font-size: 40px;
+  }
+
+  .home__destktop {
+    display: grid;
+  }
+
+  .mobile {
+    display: none;
   }
 
   .personalized__boxes {
