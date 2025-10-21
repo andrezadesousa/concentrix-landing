@@ -23,7 +23,7 @@ Este é um projeto front-end desenvolvido em React, que simula um portal interat
 
 - [React](https://reactjs.org/)  
 - [TypeScript](https://www.typescriptlang.org/)  
-- [CSS3 / Globals.css](./src/globals.css)  
+- [CSS3 / App.css](./src/globals.css)  
 - Estrutura de componentes reutilizáveis (Hero, Alert, Home, Faq, etc.)
 
 ---
