@@ -1,4 +1,4 @@
-# Projeto Web - Portal de Experiência
+# Projeto Web - Concentrix
 
 Este é um projeto front-end desenvolvido em React, que simula um portal interativo com login via CPF/CNPJ e validação de idade. 
 
