@@ -555,6 +555,28 @@ button {
   opacity: 0.8;
 }
 
+.alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  color: var(--white-color);
+  font-weight: 700;
+  font-size: 16px;
+  z-index: 9999;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.alert.success {
+  background-color: var(--blue-600);
+}
+
+.alert.error {
+  background-color: #e74c3c;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
