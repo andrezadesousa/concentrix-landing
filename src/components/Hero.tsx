@@ -1,10 +1,14 @@
 import { useState } from "react";
 
-const Hero = () => {
-  const [perfil, setPerfil] = useState("PF"); // "PF" ou "PJ"
+interface HeroProps {
+  onLogin?: () => void;
+}
+
+const Hero = ({ onLogin }: HeroProps) => {
+  const [perfil, setPerfil] = useState("PF");
   const [documento, setDocumento] = useState("");
   const [nascimento, setNascimento] = useState("");
-  const [error, setError] = useState(""); // aviso para o usuário
+  const [error, setError] = useState("");
 
   const handlePF = () => {
     setPerfil("PF");
@@ -59,7 +63,6 @@ const Hero = () => {
   const handleLogin = (e: any) => {
     e.preventDefault();
 
-    // validação completa
     const documentoValido =
       (perfil === "PF" && documento.length === 14) ||
       (perfil === "PJ" && documento.length === 18);
@@ -78,10 +81,11 @@ const Hero = () => {
       }`
     );
 
-    // resetar campos e limpar erro
     setDocumento("");
     setNascimento("");
     setError("");
+
+    if (onLogin) onLogin();
   };
 
   // desabilita botão se os campos não estiverem completos
