@@ -1,4 +1,3 @@
-import React from "react";
 import Toggle from "../assets/toggle.png";
 import FooterUs from "../assets/footer-us.png";
 import FooterPayment from "../assets/footer-payment.png";

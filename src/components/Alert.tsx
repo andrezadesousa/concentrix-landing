@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 interface AlertProps {
   message: string;
@@ -10,7 +10,7 @@ const Alert = ({ message, type = "success", onClose }: AlertProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
-    }, 3000); // desaparece depois de 3s
+    }, 3000);
     return () => clearTimeout(timer);
   }, [onClose]);
 
