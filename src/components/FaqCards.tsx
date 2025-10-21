@@ -21,7 +21,11 @@ function FaqCards({ title, text }: FaqProps) {
           style={{ cursor: "pointer" }}
         >
           <span>{title}</span>
-          <i className={`bxr ${isOpen ? "bx-minus" : "bx-plus"}`} />
+          <i
+            className={`bxr ${
+              isOpen ? "ri-close-circle-line" : "ri-add-circle-line"
+            }`}
+          />
         </div>
         {isOpen && <p className="faq__card-text">{text}</p>}
       </div>
