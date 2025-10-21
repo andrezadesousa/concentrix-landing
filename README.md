@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# Projeto Web - Portal de Experiência
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto front-end desenvolvido em React, que simula um portal interativo com login via CPF/CNPJ e validação de idade. 
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funcionalidades
 
-## React Compiler
+- Formulário de login com seleção de **Pessoa Física (CPF)** ou **Pessoa Jurídica (CNPJ)**.  
+- Validação de CPF/CNPJ e **data de nascimento**.  
+- Verificação de idade mínima (18 anos).  
+- Alertas de sucesso e erros com mensagens claras:  
+  - CPF/CNPJ inválido  
+  - Data de nascimento inválida  
+  - Idade menor que 18 anos  
+- Redirecionamento automático após login bem-sucedido.  
+- Layout responsivo e moderno, seguindo o design fornecido.  
+- Componentes adicionais: Home, Serviços Personalizados, FAQ, Start Now, Footer.  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://reactjs.org/)  
+- [TypeScript](https://www.typescriptlang.org/)  
+- [CSS3 / Globals.css](./src/globals.css)  
+- Estrutura de componentes reutilizáveis (Hero, Alert, Home, Faq, etc.)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 💻 Como Executar o Projeto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Siga os passos abaixo para rodar o projeto localmente:
+
+1. **Clone o repositório**  
+```bash
+git clone https://github.com/andrezadesousa/concentrix-landing
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Entre na pasta do projeto**
+```bash
+cd concentrix-landing
 ```
+3. **Instale as dependências**
+```bash
+npm install
+# ou
+yarn install
+```
+4. **Inicie o servidor de desenvolvimento**
+```bash
+npm run dev
+```
+5. **Inicie o servidor de desenvolvimento**
+```bash
+├── src/
+│   ├── components/       # Componentes React reutilizáveis
+│   │   ├── Hero.tsx
+│   │   ├── Alert.tsx
+│   │   ├── Home.tsx
+│   │   ├── Faq.tsx
+│   │   └── ...
+│   ├── assets/           # Imagens e ícones
+│   ├── App.tsx           # Componente principal
+│   └── main.tsx       
+│   └── App.css       
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+📌 Observações
+- O projeto é front-end apenas, com redirecionamento simulado para https://andreza-sousa.web.app/ após login válido.
+- A validação de CPF/CNPJ e idade é feita no cliente.
+
+Feito com ❤️ por Andreza de Sousa
